@@ -1,27 +1,32 @@
 BaseAIRAppLinux
 ===============
 
-A minimal AIR app project with Linux shell scripts.
+A minimal AIR app project, using the [airbuild Docker image](https://registry.hub.docker.com/u/jeko/airbuild/).
 
 Requirements
 ------------
-* `$AIR_HOME` environment variable pointing to AIR SDK
-* `$ANDROID_SDK` environment variable pointing to ANDROID SDK
+* Docker installed (http://docker.com/)
+* Airbuild docker image installed
 
-Usage
+Setup
 -----
 
-To simulate:
-<pre>
-./compile.sh
-./simulate.sh
-</pre>
+* Edit the `setenv` file:
+  * to match the version of airbuild you wan't to use.
+  * remove "sudo" in the docker command if it isn't necessary.
 
-To install on an Android device (attached via USB):
-<pre>
-./compile.sh
-./package_android.sh
-./install_android.sh
-</pre>
+Compile
+-------
+
+    ./compile.sh
+
+Package for Android
+
+    ./package_android.sh
+
+Package for iOS
+
+    ./package_ios.sh
 
 While the `package_ios.sh` script is there for reference, it requires membership in the iOS developer program, certificates, etc.
+

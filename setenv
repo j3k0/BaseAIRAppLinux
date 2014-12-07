@@ -1,4 +1,9 @@
+# Choose airbuild image version
 DOCKER_IMAGE="jeko/airbuild:15.0"
-DOCKER_RUN="sudo docker run -v /home/admin/docker-airbuild/bin:/home/air/bin -v /home/admin/docker-airbuild/docker-entry.sh:/docker-entry.sh -v `pwd`:/src -it --rm $DOCKER_IMAGE"
+
+# Remove SUDO if not necessary
+DOCKER_RUN="sudo docker run -v `pwd`:/src -it --rm $DOCKER_IMAGE"
+
+# No need to edit that
 MXMLC="$DOCKER_RUN mxmlc"
 ADT="$DOCKER_RUN adt"
